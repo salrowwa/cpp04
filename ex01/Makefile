@@ -1,8 +1,8 @@
-NAME     = ex00
+NAME     = ex01
 CXX      = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
-SRCS     = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp 
-		   WrongCat.cpp Brain.cpp Brain.hpp
+SRCS     = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp \
+		   WrongCat.cpp Brain.cpp
 
 OBJS     = $(SRCS:.cpp=.o)
  

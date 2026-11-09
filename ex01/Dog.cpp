@@ -20,7 +20,7 @@ Dog& Dog::operator=(const Dog& src)
 
     if (this != &src)
     {
-        _type = src._type;
+        Animal::operator=(src);
         if (this->_brain != NULL)
 			delete (this->_brain);
 		this->_brain = new Brain(*src._brain);
@@ -37,7 +37,7 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-    std::cout << "[Dog] Mewo Mewoooo Mewoooooooo ^-^" << std::endl;
+    std::cout << "[Dog] wof wooof woooffffff ^-^" << std::endl;
 }
 
 std::string Dog::getIdea(int idea_nr) const
@@ -53,5 +53,5 @@ void Dog::setIdea(int idea_nr, std::string new_idea)
 	if (idea_nr >= 0 && idea_nr < 100)
 		_brain->_ideas[idea_nr] = new_idea;
 	else
-		std::cout << "Dog brain can just save 100 ideas";
+		std::cout << "Dog brain can just save 100 ideas"<< std::endl;
 }

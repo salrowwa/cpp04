@@ -1,6 +1,6 @@
 #include "Cat.hpp"
 
-Cat::Cat() : Animal()
+Cat::Cat() : AAnimal()
 {
     _type = "Cat";
     _brain = new Brain();
@@ -8,7 +8,7 @@ Cat::Cat() : Animal()
 }
 
 
-Cat::Cat(const Cat& src) : Animal(src)
+Cat::Cat(const Cat& src) : AAnimal(src)
 {
     std::cout << "[Cat] Copy constructor called" << std::endl;
     _brain = new Brain(*(src._brain));
@@ -20,7 +20,7 @@ Cat& Cat::operator=(const Cat& src)
 
     if (this != &src)
     {
-        _type = src._type;
+        AAnimal::operator=(src);
         if (this->_brain != NULL)
 			delete (this->_brain);
 		this->_brain = new Brain(*src._brain);
@@ -53,5 +53,5 @@ void Cat::setIdea(int idea_nr, std::string new_idea)
 	if (idea_nr >= 0 && idea_nr < 100)
 		_brain->_ideas[idea_nr] = new_idea;
 	else
-		std::cout << "Cat brain can just save 100 ideas";
+		std::cout << "Cat brain can just save 100 ideas\n";
 }

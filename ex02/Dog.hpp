@@ -1,12 +1,12 @@
-#ifndef Dog_HPP
-# define Dog_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
 # include <string>
 # include <iostream>
 # include "Brain.hpp"
-# include "Animal.hpp"
+# include "AAnimal.hpp"
 
-class Dog : public Animal
+class Dog : public AAnimal
 {
     private:
         Brain* _brain;

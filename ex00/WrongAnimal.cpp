@@ -7,10 +7,9 @@ WrongAnimal::WrongAnimal()
 }
 
 
-WrongAnimal::WrongAnimal(const WrongAnimal& src)
+WrongAnimal::WrongAnimal(const WrongAnimal& src) : _type(src._type)
 {
     std::cout << "[WrongAnimal] Copy constructor called" << std::endl;
-	*this = src;
 }
 
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& src)

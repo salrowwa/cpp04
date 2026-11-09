@@ -6,11 +6,9 @@ Animal::Animal()
     std::cout << "[Animal] Default constructor called" << std::endl;
 }
 
-Animal::Animal(const Animal& src)
+Animal::Animal(const Animal& src) : _type(src._type)
 {
     std::cout << "[Animal] Copy constructor called" << std::endl;
-    		std::string type;
-
 }
 
 Animal& Animal::operator=(const Animal& src)

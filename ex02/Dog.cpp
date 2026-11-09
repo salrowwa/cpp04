@@ -1,6 +1,6 @@
 #include "Dog.hpp"
 
-Dog::Dog() : Animal()
+Dog::Dog() : AAnimal()
 {
     _type = "Dog";
     _brain = new Brain();
@@ -8,7 +8,7 @@ Dog::Dog() : Animal()
 }
 
 
-Dog::Dog(const Dog& src) : Animal(src)
+Dog::Dog(const Dog& src) : AAnimal(src)
 {
     std::cout << "[Dog] Copy constructor called" << std::endl;
     _brain = new Brain(*(src._brain));
@@ -20,7 +20,7 @@ Dog& Dog::operator=(const Dog& src)
 
     if (this != &src)
     {
-        _type = src._type;
+        AAnimal::operator=(src);
         if (this->_brain != NULL)
 			delete (this->_brain);
 		this->_brain = new Brain(*src._brain);
@@ -37,7 +37,7 @@ Dog::~Dog()
 
 void Dog::makeSound() const
 {
-    std::cout << "[Dog] Mewo Mewoooo Mewoooooooo ^-^" << std::endl;
+    std::cout << "[Dog] Woof Woof Woooof! ^-^" << std::endl;
 }
 
 std::string Dog::getIdea(int idea_nr) const
@@ -53,5 +53,5 @@ void Dog::setIdea(int idea_nr, std::string new_idea)
 	if (idea_nr >= 0 && idea_nr < 100)
 		_brain->_ideas[idea_nr] = new_idea;
 	else
-		std::cout << "Dog brain can just save 100 ideas";
+		std::cout << "Dog brain can just save 100 ideas" << std::endl;
 }

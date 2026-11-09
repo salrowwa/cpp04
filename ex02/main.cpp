@@ -1,5 +1,5 @@
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
 #include "Brain.hpp"
@@ -13,8 +13,8 @@ int main()
 {
     title("Subject test");
     {
-        const Animal* j = new Dog();
-        const Animal* i = new Cat();
+        const AAnimal* j = new Dog();
+        const AAnimal* i = new Cat();
 
         delete j; // should not create a leak
         delete i;
@@ -23,7 +23,7 @@ int main()
     title("Array of Animals (half Dog, half Cat)");
     {
         const int size = 6;
-        Animal* zoo[size];
+        AAnimal* zoo[size];
 
         for (int k = 0; k < size / 2; k++)
             zoo[k] = new Dog();

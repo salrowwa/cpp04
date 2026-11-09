@@ -20,7 +20,7 @@ Cat& Cat::operator=(const Cat& src)
 
     if (this != &src)
     {
-        _type = src._type;
+        Animal::operator=(src);
         if (this->_brain != NULL)
 			delete (this->_brain);
 		this->_brain = new Brain(*src._brain);
@@ -53,5 +53,5 @@ void Cat::setIdea(int idea_nr, std::string new_idea)
 	if (idea_nr >= 0 && idea_nr < 100)
 		_brain->_ideas[idea_nr] = new_idea;
 	else
-		std::cout << "Cat brain can just save 100 ideas";
+		std::cout << "Cat brain can just save 100 ideas"<< std::endl;
 }
